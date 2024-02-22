@@ -10,8 +10,8 @@ class Starnet2t < Formula
   license "public_domain"
 
   depends_on :macos
-  depends_on opencv
-  depends_on pytorch
+  depends_on "opencv"
+  depends_on "pytorch"
 
   def install
     chmod 0755, "starnet2"
