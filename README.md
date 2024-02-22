@@ -1,2 +1,6 @@
-# homebrew-startnet2t
-homebrew formula to install new (experimental) startnet2t module
+# StarNet2t
+
+```sh
+brew tap rbaranga/homebrew-startnet2t
+brew install Starnet2t
+```
