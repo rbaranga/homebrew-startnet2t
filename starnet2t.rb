@@ -27,7 +27,7 @@ case $INPUTS in
         INPUTS="$INPUTS -w #{share}/StarNet2_weights.pt"
         ;;
 esac
-#{libexec}/starnet2 $INPUTS
+#{libexec}/starnet2 $INPUTS 2> /dev/null
 EOS
     chmod 0755, bin/"starnet2"
   end
