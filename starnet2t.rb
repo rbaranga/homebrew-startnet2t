@@ -16,8 +16,20 @@ class Starnet2t < Formula
   def install
     chmod 0755, "starnet2"
     libexec.install "starnet2"
-    libexec.install "StarNet2_weights.pt"
-    bin.install_symlink libexec/"starnet2"
+    share.install "StarNet2_weights.pt"
+    (bin/"starnet2").write <<~EOS
+#!/bin/sh
+INPUTS=$@
+case $INPUTS in
+    *"-w"*)
+        ;;
+    *)
+        INPUTS="$INPUTS -w #{share}/StarNet2_weights.pt"
+        ;;
+esac
+#{libexec}/starnet2 $INPUTS
+EOS
+    chmod 0755, bin/"starnet2"
   end
 
   test do
