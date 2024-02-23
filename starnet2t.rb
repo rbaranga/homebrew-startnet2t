@@ -17,7 +17,7 @@ class Starnet2t < Formula
     chmod 0755, "starnet2"
     libexec.install "starnet2"
     libexec.install "StarNet2_weights.pt"
-    bin.install_symlink libexec\"starnet2"
+    bin.install_symlink libexec/"starnet2"
   end
 
   test do
