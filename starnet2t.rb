@@ -10,12 +10,11 @@ class Starnet2t < Formula
   license "public_domain"
 
   depends_on :macos
-  depends_on "opencv"
-  depends_on "pytorch"
-
+  
   def install
     chmod 0755, "starnet2"
     libexec.install "starnet2"
+    libexec.install "lib"
     share.install "StarNet2_weights.pt"
     (bin/"starnet2").write <<~EOS
 #!/bin/sh
